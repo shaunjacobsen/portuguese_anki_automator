@@ -67,7 +67,11 @@ Output: New TSV file with added columns linking to audio files for Anki import.
 Prepare your initial TSV file with columns:
 Portuguese \t English \t French
 
+(See examples/list.tsv for an example starter file)
+
 Use ChatGPT (or another method) with the prompt above to generate the verb conjugations and example sentences. Append these conjugations and sentences to your TSV or create a new file including them.
+
+(See examples/list_from_chatgpt.tsv for an example file you should have from ChatGPT)
 
 Run the audio downloader:
 
@@ -77,13 +81,14 @@ Run the audio adder script to produce the final TSV for Anki:
 
 `node add_audio_to_tsv.js verbs_with_conjugations.tsv verbs_for_anki.tsv`
 
-Import the final TSV (verbs_for_anki.tsv) into Anki.
+Import the final TSV (verbs_for_anki.tsv) into Anki. (See examples/final_list.tsv for an example file after this step)
 
 Ensure the audio files downloaded in step 3 are placed in the folder Anki uses for media (usually the Anki media collection folder on desktop). This allows the audio to play correctly in the flashcards.
 
 ## Notes
 
 - This setup assumes Node.js is installed. Run `npm i` first!
+- I suggest using the vscode extension [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv) when working with tsv files, it will make everything easier to read.
 - The audio downloader uses online resources to fetch pronunciation files.
 - Make sure your TSV columns remain consistent to avoid import errors.
 - You can customize or extend the scripts to include other tenses or languages.
